@@ -1,0 +1,78 @@
+$Question 1:
+1)
+### Representing g(x) as x⊤Ax + b⊤x + c
+
+The given function is:  
+g(x) = (x₁ + 49)² + (x₂ − 36)²  
+
+#### Expansion:  
+g(x) = x₁² + 2(49)x₁ + 49² + x₂² − 2(36)x₂ + 36²  
+
+g(x) = x⊤Ax + b⊤x + c  
+
+Here:  
+A = [ 1  0  
+      0  1 ] (since the coefficients of x₁² and x₂² are 1)  
+
+b = [ 2(49)  
+     -2(36) ] = [ 98  
+                  -72 ]  
+
+c = 49² + 36² = 2401 + 1296 = 3697  
+
+Thus:  
+g(x) = x⊤[ 1  0  
+           0  1 ]x + [ 98  
+                       -72 ]⊤x + 3697  
+
+---
+
+### Minimizer and Minimum Function Value for f(x) and g(x)
+
+#### For g(x):  
+
+The minimizer is the solution of ∇g(x) = 0, i.e., A*x + b = 0:  
+A*x = −b  
+x = −A⁻¹b = −[ 1  0  
+                0  1 ] [ 98  
+                         -72 ] = [ -98  
+                                    72 ]  
+
+Minimum function value:  
+g(x) = x⊤Ax + b⊤x + c  
+Substitute x = [ -98, 72 ]⊤:  
+g([ -98, 72 ]) = 3697 + (−98⋅98 + 72⋅−72)  
+               = 3697 − (9604 + 5184)  
+               = −11091  
+
+---
+
+#### For f(x):  
+
+f(x) = 256(x₂ − x₁²)² + (2 − x₁)²  
+
+The minimum occurs at (x₁, x₂) = (2, 4), solving the equations x₂ = x₁² and x₁ = 2.  
+
+Minimum function value:  
+f(2, 4) = 0
+
+2)
+### Analytical Solution to min α≥0 g(x − α∇g(x))
+
+#### Gradient of g(x):  
+∇g(x) = 2(x − [−49, 36])  
+
+#### Line search problem:  
+min α≥0 g(x − α∇g(x)) = min α≥0 ∥x − α∇g(x) + [49, −36]∥²  
+
+#### Simplify:  
+Closed-form solution exists as it reduces to a quadratic equation in α.  
+
+---
+
+#### For f(x):  
+Due to its non-linear second term, no closed-form solution exists for  
+min α≥0 f(x − α∇f(x)).
+
+
+
